@@ -1,4 +1,4 @@
-package matier;
+package metier;
 
 public class Test {
 
