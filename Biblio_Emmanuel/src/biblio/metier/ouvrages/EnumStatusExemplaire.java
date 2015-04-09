@@ -5,7 +5,7 @@ package biblio.metier.ouvrages;
  * @author Ak.vin / ManuL
  * 
  */
-enum EnumStatusExemplaire {
+public enum EnumStatusExemplaire {
 	PRETE,
 	DISPONIBLE,
 	SUPPRIMER;
