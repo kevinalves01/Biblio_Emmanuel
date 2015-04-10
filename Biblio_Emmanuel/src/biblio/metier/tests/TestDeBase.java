@@ -41,6 +41,18 @@ public class TestDeBase {
 		
 		System.out.println("Emprunt en cours 1\n"+emp1);
 		
+		
+		EmpruntEnCours emp2 = null;
+		
+		try {
+			emp2 = new EmpruntEnCours(sdf.parse("08/04/2015"), ex2, em1);
+		} catch (BiblioException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("Emprunt en cours 2\n"+emp2);
 	}
 
 }
