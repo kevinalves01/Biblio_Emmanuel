@@ -50,7 +50,8 @@ public class Personne {
 	
 	@Override
 	public String toString() {
-		return "Personne [nom:"+ this.nom + ":prénom:" + this.prenom + ":date de naissance:" + this.dateNaissance + "]"; 
+		return "Personne [nom : "+ this.nom + ", prénom : " + this.prenom
+				+ ", date de naissance : " + this.dateNaissance + "]"; 
 	}
 	
 	@Override

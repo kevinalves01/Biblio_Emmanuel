@@ -40,9 +40,9 @@ public class Employe extends Utilisateur
 	
 	@Override
 	public String toString() {
-		return "Employé[Nom:" + this.getNom() + ":Prénom:" + this.getPrenom()
-				+ ":idUtilisateur:" + this.getIdUtilisateur() + ":CodeMatricule:" + this.codeMatricule
-				+ ":Catégorie:" + this.categorieEmploye + "]";
+		return "Employé[Nom : " + this.getNom() + ", Prénom : " + this.getPrenom()
+				+ ", idUtilisateur : " + this.getIdUtilisateur() + ", CodeMatricule : " + this.codeMatricule
+				+ ", Catégorie : " + this.categorieEmploye + "]";
 	}
 	
 	@Override

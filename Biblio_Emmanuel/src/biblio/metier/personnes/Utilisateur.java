@@ -28,28 +28,7 @@ public class Utilisateur extends Personne
 		this.pseudonyme = pseudonyme;
 		this.empruntEnCours = new ArrayList<EmpruntEnCours>();
 	}
-	
-/*	public Utilisateur(int idUtilisateur, String pwd, String pseudonyme) 
-	{
-		this.idUtilisateur = idUtilisateur;
-		this.pwd = pwd;
-		this.pseudonyme = pseudonyme;
-	}
-	
-	public Utilisateur(int idUtilisateur, String pwd)
-	{
-		
-	}
-	
-	public Utilisateur(int idUtilisateur)
-	{
-		
-	}
-	
-	public Utilisateur()
-	{
-			}
-*/	
+
 	/**
 	 * @return l'ID de l'
 	 * Utilisateur
@@ -111,8 +90,8 @@ public class Utilisateur extends Personne
 	@Override
 	public String toString() 
 	{
-		return "Utilisateur [nom :" + this.getNom() + ":prénom:" + this.getPrenom()
-				+ ":idUtilisateur:" + this.idUtilisateur + ":pseudonyme:" + this.pseudonyme + "]";
+		return "Utilisateur [nom  : " + this.getNom() + ", prénom : " + this.getPrenom()
+				+ ", idUtilisateur : " + this.idUtilisateur + ", pseudonyme : " + this.pseudonyme + "]";
 	}
 	
 	@Override

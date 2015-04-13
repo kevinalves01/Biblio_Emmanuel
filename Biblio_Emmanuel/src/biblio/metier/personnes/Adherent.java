@@ -3,6 +3,7 @@
  */
 package biblio.metier.personnes;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
@@ -53,8 +54,8 @@ public class Adherent extends Utilisateur
 
 	@Override
 	public String toString() {
-		return "Adhérent[Nom:" + this.getNom() + ":Prénom:" + this.getPrenom() + ":idUtilisateur:"
-				+ this.getIdUtilisateur() + ":pseudonyme:" + this.getPseudonyme() + "]";
+		return "Adhérent[Nom : " + this.getNom() + ", Prénom : " + this.getPrenom() + ", idUtilisateur : "
+				+ this.getIdUtilisateur() + ", pseudonyme : " + this.getPseudonyme() + "]";
 	}
 	
 	@Override
@@ -99,7 +100,7 @@ public class Adherent extends Utilisateur
 	}
 	
 	public int getNbRetards() {
-		int nb = 0;
+		int nb = 0; //ArrayList<EmpruntEnCours> empruntEnRetard = new ArrayList<EmpruntEnCours>()
 		Iterator<EmpruntEnCours> it = this.getEmpruntEnCours().iterator();
 		while (it.hasNext()) {
 			EmpruntEnCours emp = it.next();
@@ -107,11 +108,25 @@ public class Adherent extends Utilisateur
 			calendrier.add(GregorianCalendar.DAY_OF_YEAR, -(dureeMaxPrets+1));
 			Date prêt = calendrier.getTime();
 			if (prêt.after(emp.getDateEmprunt())) {
-				nb++;
+				nb++; //empruntEnRetard.add(emp)
 			}
 		}
 		return nb;
 	}
 	
+	public ArrayList<EmpruntEnCours> getRetards() {
+		ArrayList<EmpruntEnCours> empruntEnRetard = new ArrayList<EmpruntEnCours>();
+		Iterator<EmpruntEnCours> it = this.getEmpruntEnCours().iterator();
+		while (it.hasNext()) {
+			EmpruntEnCours emp = it.next();
+			GregorianCalendar calendrier = new GregorianCalendar();
+			calendrier.add(GregorianCalendar.DAY_OF_YEAR, -(dureeMaxPrets+1));
+			Date prêt = calendrier.getTime();
+			if (prêt.after(emp.getDateEmprunt())) {
+				empruntEnRetard.add(emp);
+			}
+		}
+		return empruntEnRetard ;
+	}
 	
 }

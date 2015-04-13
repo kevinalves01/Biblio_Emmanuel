@@ -16,18 +16,29 @@ public class TestEmployeEnRetard {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
+		System.out.println("TEST EMPLOYE EN RETARD");
+		System.out.println("----------------------");
+		System.out.println();
+
+		
 		ExemplairesDao exdb = new ExemplairesDao();
 		Exemplaire ex1 = exdb.findByKey(1);
 		Exemplaire ex2 = exdb.findByKey(2);
-		System.out.println("Exemplaire 1 :\n"+ex1);
-		System.out.println("Exemplaire 2 :\n"+ex2);
+		System.out.println("Demande d'un exemplaire (id=1) aux Dao :\n"+ex1);
+		System.out.println();
+		System.out.println("Demande d'un exemplaire (id=2) aux Dao :\n"+ex2);
+		System.out.println();
 		
 		UtilisateursDao utdb = new UtilisateursDao();
 		Utilisateur em1 = utdb.findByKey(666);
-		System.out.println("Employé :\n"+em1);
+		System.out.println("Demande d'un employé (id=666) aux Dao :\n"+em1);
+		System.out.println();
 
 		EmpruntEnCours emp1=null;
 		
+		System.out.println("Création d'un emprunt en cours avec une date en retard.");
+		System.out.println();
+
 		try {
 			emp1 = new EmpruntEnCours(sdf.parse("25/03/2015"), ex1, em1);
 		} catch (BiblioException e) {
@@ -37,7 +48,11 @@ public class TestEmployeEnRetard {
 		}
 
 		System.out.println("Emprunt en cours 1\n"+emp1);
+		System.out.println();
 		
+		System.out.println("Tentative de création d'un deuxième emprunt en cours.");
+		System.out.println();
+
 		EmpruntEnCours emp2 = null;
 		
 		try {
@@ -49,6 +64,8 @@ public class TestEmployeEnRetard {
 		}
 		
 		System.out.println("Emprunt en cours 2\n"+ emp2);
+		System.out.println();
+		System.out.println("Nombre d'emprunt en cours de l'employé :\n"+em1.getNbEmpruntEnCours());
 
 	}
 
